@@ -137,7 +137,7 @@ CREATE TABLE CentralKitchenKhaiVPM (
 /* 5. STORE REGION (SUB)         */
 /* ============================= */
 CREATE TABLE StoreRegionPhucBHV (
-    StoreRegionId INT IDENTITY PRIMARY KEY,
+    StoreRegionPhucBHVId INT IDENTITY PRIMARY KEY,
     RegionName NVARCHAR(150),
     Description NVARCHAR(500),
     IsActive BIT
