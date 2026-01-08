@@ -158,9 +158,9 @@ CREATE TABLE FranchiseStorePhucBHV (
     Revenue DECIMAL(18,2),
     IsActive BIT,
     StoreRegionId INT NOT NULL,
-    CentralKitchenId INT NOT NULL,
+    CentralKitchenKhaiVPMId INT NOT NULL,
     FOREIGN KEY (StoreRegionId) REFERENCES StoreRegionPhucBHV(StoreRegionId),
-    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId)
+    FOREIGN KEY (CentralKitchenKhaiVPMId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId)
 );
 
 /* ============================= */
@@ -188,9 +188,9 @@ CREATE TABLE InventoryHuyND (
     UpdatedDate DATETIME,
     Cost DECIMAL(18,2),
     IsActive BIT,
-    CentralKitchenId INT NOT NULL,
+    CentralKitchenKhaiVPMId INT NOT NULL,
     InventoryLocationHuyNDId INT NOT NULL,
-    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId),
+    FOREIGN KEY (CentralKitchenKhaiVPMId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId),
     FOREIGN KEY (InventoryLocationHuyNDId) REFERENCES InventoryLocationHuyND(InventoryLocationHuyNDId)
 );
 
