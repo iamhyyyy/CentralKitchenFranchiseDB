@@ -197,8 +197,8 @@ CREATE TABLE InventoryHuyND (
 /* ============================= */
 /* 7. ORDER STATUS (SUB)         */
 /* ============================= */
-CREATE TABLE OrderStatus (
-    OrderStatusId INT IDENTITY PRIMARY KEY,
+CREATE TABLE OrderStatusLamNQ (
+    OrderStatusLamNQId INT IDENTITY PRIMARY KEY,
     StatusName NVARCHAR(100),
     Description NVARCHAR(500),
     IsActive BIT
@@ -207,8 +207,8 @@ CREATE TABLE OrderStatus (
 /* ============================= */
 /* 7. ORDER HEADER (MAIN)        */
 /* ============================= */
-CREATE TABLE OrderHeader (
-    OrderId INT IDENTITY PRIMARY KEY,
+CREATE TABLE OrderHeaderLamNQ (
+    OrderLamNQId INT IDENTITY PRIMARY KEY,
     OrderCode NVARCHAR(100),
     OrderDate DATE,
     TotalAmount DECIMAL(18,2),
@@ -220,10 +220,13 @@ CREATE TABLE OrderHeader (
     IsActive BIT,
     FranchiseStoreId INT NOT NULL,
     ProductKietDTId INT NOT NULL,
-    OrderStatusId INT NOT NULL,
-    FOREIGN KEY (FranchiseStoreId) REFERENCES FranchiseStorePhucBHV(FranchiseStoreId),
-    FOREIGN KEY (ProductKietDTId) REFERENCES ProductKietDT(ProductKietDTId),
-    FOREIGN KEY (OrderStatusId) REFERENCES OrderStatus(OrderStatusId)
+    OrderStatusLamNQId INT NOT NULL,
+    FOREIGN KEY (FranchiseStoreId)
+        REFERENCES FranchiseStorePhucBHV(FranchiseStoreId),
+    FOREIGN KEY (ProductKietDTId)
+        REFERENCES ProductKietDT(ProductKietDTId),
+    FOREIGN KEY (OrderStatusLamNQId)
+        REFERENCES OrderStatusLamNQ(OrderStatusLamNQId)
 );
 
 /* ============================= */
