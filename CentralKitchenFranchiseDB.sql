@@ -78,7 +78,7 @@ CREATE TABLE ProductKietDT (
 /* 3. VARIANT COLOR (SUB)        */
 /* ============================= */
 CREATE TABLE VariantColorHauPT (
-    VariantColorId INT IDENTITY PRIMARY KEY,
+    VariantColorHauPTId INT IDENTITY PRIMARY KEY,
     ColorName NVARCHAR(100),
     ColorCode NVARCHAR(20),
     IsActive BIT
@@ -88,7 +88,7 @@ CREATE TABLE VariantColorHauPT (
 /* 3. PRODUCT VARIANT (MAIN)     */
 /* ============================= */
 CREATE TABLE ProductVariantHauPT (
-    ProductVariantId INT IDENTITY PRIMARY KEY,
+    ProductVariantHauPTId INT IDENTITY PRIMARY KEY,
     VariantName NVARCHAR(150),
     Price DECIMAL(18,2),
     SKU NVARCHAR(100),
@@ -100,9 +100,9 @@ CREATE TABLE ProductVariantHauPT (
     UpdatedDate DATETIME,
     IsActive BIT,
     ProductKietDTId INT NOT NULL,
-    VariantColorId INT NOT NULL,
+    VariantColorHauPTId INT NOT NULL,
     FOREIGN KEY (ProductKietDTId) REFERENCES ProductKietDT(ProductKietDTId),
-    FOREIGN KEY (VariantColorId) REFERENCES VariantColorHauPT(VariantColorId)
+    FOREIGN KEY (VariantColorHauPTId) REFERENCES VariantColorHauPT(VariantColorHauPTId)
 );
 
 /* ============================= */
