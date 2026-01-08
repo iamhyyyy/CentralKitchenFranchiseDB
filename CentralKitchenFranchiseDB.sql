@@ -167,7 +167,7 @@ CREATE TABLE FranchiseStorePhucBHV (
 /* 6. INVENTORY LOCATION (SUB)   */
 /* ============================= */
 CREATE TABLE InventoryLocationHuyND (
-    InventoryLocationHuyND INT IDENTITY PRIMARY KEY,
+    InventoryLocationHuyNDId INT IDENTITY PRIMARY KEY,
     LocationName NVARCHAR(150),
     Description NVARCHAR(500),
     IsActive BIT
@@ -177,7 +177,7 @@ CREATE TABLE InventoryLocationHuyND (
 /* 6. INVENTORY (MAIN)           */
 /* ============================= */
 CREATE TABLE InventoryHuyND (
-    InventoryHuyND INT IDENTITY PRIMARY KEY,
+    InventoryHuyNDId INT IDENTITY PRIMARY KEY,
     ItemName NVARCHAR(250),
     Quantity INT,
     Unit NVARCHAR(50),
@@ -189,9 +189,9 @@ CREATE TABLE InventoryHuyND (
     Cost DECIMAL(18,2),
     IsActive BIT,
     CentralKitchenId INT NOT NULL,
-    InventoryLocationHuyND INT NOT NULL,
+    InventoryLocationHuyNDId INT NOT NULL,
     FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenId),
-    FOREIGN KEY (InventoryLocationHuyND) REFERENCES InventoryLocationHuyND(InventoryLocationHuyND)
+    FOREIGN KEY (InventoryLocationHuyNDId) REFERENCES InventoryLocationHuyND(InventoryLocationHuyNDId)
 );
 
 /* ============================= */
