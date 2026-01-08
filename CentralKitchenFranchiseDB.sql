@@ -256,12 +256,12 @@ CREATE TABLE DeliveryHuyNV (
 
     IsActive BIT NOT NULL DEFAULT 1,
 
-    OrderId INT UNIQUE NOT NULL,
+    OrderLamNQId INT UNIQUE NOT NULL,
     DeliveryMethodHuyNVId INT NOT NULL,
 
     CONSTRAINT FK_DeliveryHuyNV_OrderHeader
-        FOREIGN KEY (OrderId)
-        REFERENCES OrderHeader(OrderId),
+        FOREIGN KEY (OrderLamNQId)
+        REFERENCES OrderHeaderLamNQ(OrderLamNQId),
 
     CONSTRAINT FK_DeliveryHuyNV_DeliveryMethod
         FOREIGN KEY (DeliveryMethodHuyNVId)
