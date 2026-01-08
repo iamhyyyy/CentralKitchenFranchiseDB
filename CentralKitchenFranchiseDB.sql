@@ -109,7 +109,7 @@ CREATE TABLE ProductVariantHauPT (
 /* 4. KITCHEN TYPE (SUB)         */
 /* ============================= */
 CREATE TABLE KitchenTypeKhaiVPM (
-    KitchenTypeId INT IDENTITY PRIMARY KEY,
+    KitchenTypeKhaiVPMId INT IDENTITY PRIMARY KEY,
     TypeName NVARCHAR(150),
     Description NVARCHAR(500),
     IsActive BIT
@@ -119,7 +119,7 @@ CREATE TABLE KitchenTypeKhaiVPM (
 /* 4. CENTRAL KITCHEN (MAIN)     */
 /* ============================= */
 CREATE TABLE CentralKitchenKhaiVPM (
-    CentralKitchenId INT IDENTITY PRIMARY KEY,
+    CentralKitchenKhaiVPMId INT IDENTITY PRIMARY KEY,
     KitchenName NVARCHAR(250),
     Address NVARCHAR(500),
     Capacity INT,
@@ -129,8 +129,8 @@ CREATE TABLE CentralKitchenKhaiVPM (
     ModifiedDate DATETIME,
     MonthlyCost DECIMAL(18,2),
     IsActive BIT,
-    KitchenTypeId INT NOT NULL,
-    FOREIGN KEY (KitchenTypeId) REFERENCES KitchenTypeKhaiVPM(KitchenTypeId)
+    KitchenTypeKhaiVPMId INT NOT NULL,
+    FOREIGN KEY (KitchenTypeKhaiVPMId) REFERENCES KitchenTypeKhaiVPM(KitchenTypeKhaiVPMId)
 );
 
 /* ============================= */
@@ -160,7 +160,7 @@ CREATE TABLE FranchiseStorePhucBHV (
     StoreRegionId INT NOT NULL,
     CentralKitchenId INT NOT NULL,
     FOREIGN KEY (StoreRegionId) REFERENCES StoreRegionPhucBHV(StoreRegionId),
-    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenId)
+    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId)
 );
 
 /* ============================= */
@@ -190,15 +190,15 @@ CREATE TABLE InventoryHuyND (
     IsActive BIT,
     CentralKitchenId INT NOT NULL,
     InventoryLocationHuyNDId INT NOT NULL,
-    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenId),
+    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId),
     FOREIGN KEY (InventoryLocationHuyNDId) REFERENCES InventoryLocationHuyND(InventoryLocationHuyNDId)
 );
 
 /* ============================= */
 /* 7. ORDER STATUS (SUB)         */
 /* ============================= */
-CREATE TABLE OrderStatus (
-    OrderStatusId INT IDENTITY PRIMARY KEY,
+CREATE TABLE OrderStatusLamNQ (
+    OrderStatusLamNQId INT IDENTITY PRIMARY KEY,
     StatusName NVARCHAR(100),
     Description NVARCHAR(500),
     IsActive BIT
@@ -207,8 +207,8 @@ CREATE TABLE OrderStatus (
 /* ============================= */
 /* 7. ORDER HEADER (MAIN)        */
 /* ============================= */
-CREATE TABLE OrderHeader (
-    OrderId INT IDENTITY PRIMARY KEY,
+CREATE TABLE OrderHeaderLamNQ (
+    OrderLamNQId INT IDENTITY PRIMARY KEY,
     OrderCode NVARCHAR(100),
     OrderDate DATE,
     TotalAmount DECIMAL(18,2),
@@ -220,10 +220,13 @@ CREATE TABLE OrderHeader (
     IsActive BIT,
     FranchiseStoreId INT NOT NULL,
     ProductKietDTId INT NOT NULL,
-    OrderStatusId INT NOT NULL,
-    FOREIGN KEY (FranchiseStoreId) REFERENCES FranchiseStorePhucBHV(FranchiseStoreId),
-    FOREIGN KEY (ProductKietDTId) REFERENCES ProductKietDT(ProductKietDTId),
-    FOREIGN KEY (OrderStatusId) REFERENCES OrderStatus(OrderStatusId)
+    OrderStatusLamNQId INT NOT NULL,
+    FOREIGN KEY (FranchiseStoreId)
+        REFERENCES FranchiseStorePhucBHV(FranchiseStoreId),
+    FOREIGN KEY (ProductKietDTId)
+        REFERENCES ProductKietDT(ProductKietDTId),
+    FOREIGN KEY (OrderStatusLamNQId)
+        REFERENCES OrderStatusLamNQ(OrderStatusLamNQId)
 );
 
 /* ============================= */
