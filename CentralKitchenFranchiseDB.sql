@@ -227,32 +227,43 @@ CREATE TABLE OrderHeader (
 );
 
 /* ============================= */
-/* 8. DELIVERY METHOD (SUB)      */
+/* DELIVERY - HuyNV              */
 /* ============================= */
-CREATE TABLE DeliveryMethod (
-    DeliveryMethodId INT IDENTITY PRIMARY KEY,
-    MethodName NVARCHAR(150),
+
+CREATE TABLE DeliveryMethodHuyNV (
+    DeliveryMethodHuyNVId INT IDENTITY PRIMARY KEY,
+    MethodName NVARCHAR(150) NOT NULL,
     Description NVARCHAR(500),
-    IsActive BIT
+    IsActive BIT NOT NULL DEFAULT 1
 );
 
-/* ============================= */
-/* 8. DELIVERY (MAIN)            */
-/* ============================= */
-CREATE TABLE Delivery (
-    DeliveryId INT IDENTITY PRIMARY KEY,
+
+CREATE TABLE DeliveryHuyNV (
+    DeliveryHuyNVId INT IDENTITY PRIMARY KEY,
     DeliveryCode NVARCHAR(100),
     DeliveryDate DATE,
     DeliveryCost DECIMAL(18,2),
     Address NVARCHAR(500),
+
     Status INT,
-    CreatedDate DATETIME,
-    ModifiedDate DATETIME,
     EstimatedTime INT,
-    IsActive BIT,
+
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    ModifiedDate DATETIME,
+
+    IsActive BIT NOT NULL DEFAULT 1,
+
     OrderId INT UNIQUE NOT NULL,
-    DeliveryMethodId INT NOT NULL,
-    FOREIGN KEY (OrderId) REFERENCES OrderHeader(OrderId),
-    FOREIGN KEY (DeliveryMethodId) REFERENCES DeliveryMethod(DeliveryMethodId)
+    DeliveryMethodHuyNVId INT NOT NULL,
+
+    CONSTRAINT FK_DeliveryHuyNV_OrderHeader
+        FOREIGN KEY (OrderId)
+        REFERENCES OrderHeader(OrderId),
+
+    CONSTRAINT FK_DeliveryHuyNV_DeliveryMethod
+        FOREIGN KEY (DeliveryMethodHuyNVId)
+        REFERENCES DeliveryMethodHuyNV(DeliveryMethodHuyNVId)
 );
+
+
 
