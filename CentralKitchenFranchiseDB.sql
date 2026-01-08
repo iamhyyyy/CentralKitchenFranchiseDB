@@ -147,7 +147,7 @@ CREATE TABLE StoreRegionPhucBHV (
 /* 5. FRANCHISE STORE (MAIN)     */
 /* ============================= */
 CREATE TABLE FranchiseStorePhucBHV (
-    FranchiseStoreId INT IDENTITY PRIMARY KEY,
+    FranchiseStorePhucBHVId INT IDENTITY PRIMARY KEY,
     StoreName NVARCHAR(250),
     Address NVARCHAR(500),
     Phone NVARCHAR(50),
@@ -157,9 +157,9 @@ CREATE TABLE FranchiseStorePhucBHV (
     CreatedDate DATETIME,
     Revenue DECIMAL(18,2),
     IsActive BIT,
-    StoreRegionId INT NOT NULL,
+    StoreRegionPhucBHVId INT NOT NULL,
     CentralKitchenKhaiVPMId INT NOT NULL,
-    FOREIGN KEY (StoreRegionId) REFERENCES StoreRegionPhucBHV(StoreRegionId),
+    FOREIGN KEY (StoreRegionPhucBHVId) REFERENCES StoreRegionPhucBHV(StoreRegionPhucBHVId),
     FOREIGN KEY (CentralKitchenKhaiVPMId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId)
 );
 
@@ -218,11 +218,11 @@ CREATE TABLE OrderHeaderLamNQ (
     CreatedDate DATETIME,
     ModifiedDate DATETIME,
     IsActive BIT,
-    FranchiseStoreId INT NOT NULL,
+    FranchiseStorePhucBHVId INT NOT NULL,
     ProductKietDTId INT NOT NULL,
     OrderStatusLamNQId INT NOT NULL,
-    FOREIGN KEY (FranchiseStoreId)
-        REFERENCES FranchiseStorePhucBHV(FranchiseStoreId),
+    FOREIGN KEY (FranchiseStorePhucBHVId)
+        REFERENCES FranchiseStorePhucBHV(FranchiseStorePhucBHVId),
     FOREIGN KEY (ProductKietDTId)
         REFERENCES ProductKietDT(ProductKietDTId),
     FOREIGN KEY (OrderStatusLamNQId)
