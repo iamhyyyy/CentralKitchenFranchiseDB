@@ -109,7 +109,7 @@ CREATE TABLE ProductVariantHauPT (
 /* 4. KITCHEN TYPE (SUB)         */
 /* ============================= */
 CREATE TABLE KitchenTypeKhaiVPM (
-    KitchenTypeId INT IDENTITY PRIMARY KEY,
+    KitchenTypeKhaiVPMId INT IDENTITY PRIMARY KEY,
     TypeName NVARCHAR(150),
     Description NVARCHAR(500),
     IsActive BIT
@@ -119,7 +119,7 @@ CREATE TABLE KitchenTypeKhaiVPM (
 /* 4. CENTRAL KITCHEN (MAIN)     */
 /* ============================= */
 CREATE TABLE CentralKitchenKhaiVPM (
-    CentralKitchenId INT IDENTITY PRIMARY KEY,
+    CentralKitchenKhaiVPMId INT IDENTITY PRIMARY KEY,
     KitchenName NVARCHAR(250),
     Address NVARCHAR(500),
     Capacity INT,
@@ -129,8 +129,8 @@ CREATE TABLE CentralKitchenKhaiVPM (
     ModifiedDate DATETIME,
     MonthlyCost DECIMAL(18,2),
     IsActive BIT,
-    KitchenTypeId INT NOT NULL,
-    FOREIGN KEY (KitchenTypeId) REFERENCES KitchenTypeKhaiVPM(KitchenTypeId)
+    KitchenTypeKhaiVPMId INT NOT NULL,
+    FOREIGN KEY (KitchenTypeKhaiVPMId) REFERENCES KitchenTypeKhaiVPM(KitchenTypeKhaiVPMId)
 );
 
 /* ============================= */
@@ -160,7 +160,7 @@ CREATE TABLE FranchiseStorePhucBHV (
     StoreRegionId INT NOT NULL,
     CentralKitchenId INT NOT NULL,
     FOREIGN KEY (StoreRegionId) REFERENCES StoreRegionPhucBHV(StoreRegionId),
-    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenId)
+    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId)
 );
 
 /* ============================= */
@@ -190,7 +190,7 @@ CREATE TABLE InventoryHuyND (
     IsActive BIT,
     CentralKitchenId INT NOT NULL,
     InventoryLocationHuyNDId INT NOT NULL,
-    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenId),
+    FOREIGN KEY (CentralKitchenId) REFERENCES CentralKitchenKhaiVPM(CentralKitchenKhaiVPMId),
     FOREIGN KEY (InventoryLocationHuyNDId) REFERENCES InventoryLocationHuyND(InventoryLocationHuyNDId)
 );
 
