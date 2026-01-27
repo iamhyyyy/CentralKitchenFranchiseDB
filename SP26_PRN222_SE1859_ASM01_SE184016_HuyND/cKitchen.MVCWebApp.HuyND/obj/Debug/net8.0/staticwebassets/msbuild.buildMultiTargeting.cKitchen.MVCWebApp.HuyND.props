@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\cKitchen.MVCWebApp.HuyND.props" />
+</Project>

@@ -1,0 +1,117 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "CentralKitchenFranchiseDBContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "IrregularWords": null,
+   "MinimumProductVersion": "2.6.1301",
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PluralRules": null,
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "cKitchen.MVCWebApp.HuyND",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "SingularRules": null,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[CentralKitchenKhaiVPM]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DeliveryHuyNV]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DeliveryMethodHuyNV]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FranchiseStorePhucBHV]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InventoryHuyND]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InventoryLocationHuyND]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[KitchenTypeKhaiVPM]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[OrderHeaderLamNQ]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[OrderStatusLamNQ]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductCategoryKietDT]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductKietDT]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductVariantHauPT]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[StoreRegionPhucBHV]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[System.UserAccount]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VariantColorHauPT]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VehicleBrandLamTT]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VehicleModelLamTT]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}
