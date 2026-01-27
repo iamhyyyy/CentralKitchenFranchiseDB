@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cKitchen.Entities.HuyND")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b3547f69e997c270560dd4c564d4f212b711108")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14aacda790c8f8c28a437eb5587f87059cd9149c")]
 [assembly: System.Reflection.AssemblyProductAttribute("cKitchen.Entities.HuyND")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cKitchen.Entities.HuyND")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
